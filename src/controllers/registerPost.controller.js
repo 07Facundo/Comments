@@ -4,13 +4,14 @@ import Post from '../models/post.model.js'
 export const registerPost = async (req, res) => {
 
     // Extrae las propiedades username y comment del cuerpo de la solicitud (req.body). Estas propiedades deben estar presentes en la solicitud enviada al servidor.
-    const { username, comment } = req.body
-
-   try {
+    const { username, position, comment } = req.body
+    
+    try {
 
     // Crea una nueva instancia del modelo Post. Asigna los valores de username y comment a las propiedades correspondientes del nuevo post.
     const newPost = new Post({
         username,
+        position,
         comment
     })
 

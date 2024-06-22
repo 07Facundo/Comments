@@ -10,7 +10,7 @@ const app = express()
 app.use(express.json());
 
 // Se especifica que todas las rutas que comiencen con /api deben ser manejadas por el módulo authRoutes.
-app.use('/api', authRoutes)
+app.use('/api', authRoutes);
 
 // Se exporta la instancia de la aplicación app para que pueda ser utilizada en otros archivos o módulos.
 export default app
