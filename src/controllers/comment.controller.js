@@ -1,16 +1,16 @@
 import Comment from "../models/comment.model.js";
 
+
+
 export const getComments = async (req, res) => {
-  const comments = await Comment.findAll({
-    where: {
-      id_comment: req.comment.id_comment,
-    },
-  });
+  // console.log(req.comment)
+  const comments = await Comment.findAll();
 
   res.status(200).json(comments);
 };
 
 export const createComment = async (req, res) => {
+
   const { username, position, testimony } = req.body;
 
   const newComment = new Comment({
@@ -20,10 +20,6 @@ export const createComment = async (req, res) => {
   });
 
   const savedComment = await newComment.save();
-
-  req.body = savedComment.id_comment;
-
-  console.log(req.body);
 
   res.json(savedComment);
 };
@@ -74,3 +70,11 @@ export const updateComment = async (req, res) => {
     res.status(500).json({ message: "Error updating comment" }); // Generic error response
   }
 };
+
+export const logout = (req, res) =>{
+  res.cookie('token', "", {
+      expires: new Date(0),
+  });
+  
+  return res.sendStatus(200);
+}
