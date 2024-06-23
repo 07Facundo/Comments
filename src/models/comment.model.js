@@ -6,9 +6,9 @@ const sequelize = new Sequelize("test_connect_lab", "root", "43697547", {
   dialect: "mysql",
 });
 
-// Se define un modelo llamado Post que representa una tabla en la base de datos. Tiene dos columnas
-const Post = sequelize.define("post", {
-  id_post: {
+// Se define un modelo llamado Comment que representa una tabla en la base de datos. Tiene dos columnas
+const Comment = sequelize.define("comment", {
+  id_comment: {
     type: Sequelize.INTEGER,
     primaryKey: true,
     autoIncrement: true,
@@ -25,14 +25,14 @@ const Post = sequelize.define("post", {
     allowNull: false,
     trim: true,
   },
-  comment: {
+  testimony: {
     type: Sequelize.STRING(500),
     allowNull: false,
   }
 });
 
 //  crea la tabla en la base de datos si aún no existe.
-Post.sync()
+Comment.sync()
   // El bloque .then() maneja el caso en que la sincronización es exitosa.
   .then(() => {
     console.log("Tabla creada");
@@ -52,4 +52,4 @@ sequelize
     console.error("Error al conectar a la base de datos:", err);
   });
 
-export default Post;
+export default Comment;

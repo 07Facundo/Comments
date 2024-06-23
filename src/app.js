@@ -1,6 +1,7 @@
 import express from 'express'
 
-import authRoutes from './routes/registerPost.routes.js'
+import commentRoutes from './routes/comment.routes.js'
+import { saveCommentMiddleware } from './middlewares/comment.middlewares.js';
 
 // Se crea una instancia de la aplicación Express llamada app
 const app = express()
@@ -10,7 +11,7 @@ const app = express()
 app.use(express.json());
 
 // Se especifica que todas las rutas que comiencen con /api deben ser manejadas por el módulo authRoutes.
-app.use('/api', authRoutes);
+app.use('/api', commentRoutes);
 
 // Se exporta la instancia de la aplicación app para que pueda ser utilizada en otros archivos o módulos.
 export default app
