@@ -1,5 +1,3 @@
-import { crearComentario } from "../api/createComment.js";
-
 const commentForm = document.getElementById('commentForm');
 
 commentForm.addEventListener('submit', async (event) => {
