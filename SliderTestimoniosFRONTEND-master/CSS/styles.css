@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&family=Poppins:wght@300;400;600;700&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Seudo-class */
+:root{
+    /* Variables */
+    --padding-container: 100px 0;
+    --color-title: #001a49;
+
+}
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    /* centrar verticalmente */
+    margin: 0 auto;
+    /* esconder elemento */
+    overflow: hidden;
+    padding: var(--padding-container);
+}
+
+.hero{
+    position: relative;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    color: #000;
+}
+
+
+/* Nav */
+
+.nav{
+    --padding-container: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+.nav__title{
+    font-weight: 300;
+}
+
+
+.nav__link{
+    margin-left: auto;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 2em;
+}
+
+
+.nav__items{
+    list-style: none;
+}
+
+
+.nav__links{
+    color: #000;
+    text-decoration: none;
+}
+
+.nav__menu{
+    margin-left: auto;
+    /* Cursor sirve para cuando pasemos el mouse, se active*/
+    cursor: pointer;
+    display: none;
+}
